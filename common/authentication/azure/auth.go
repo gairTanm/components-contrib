@@ -322,6 +322,11 @@ func (s EnvironmentSettings) GetMSI() (config MSIConfig) {
 	return config
 }
 
+// CredConfigInterface provides an interface for various client credentials.
+type CredConfigInterface interface {
+	GetTokenCredential() (azcore.TokenCredential, error)
+}
+
 // CredentialsConfig provides the options to get a bearer authorizer from client credentials.
 type CredentialsConfig struct {
 	ClientID     string
